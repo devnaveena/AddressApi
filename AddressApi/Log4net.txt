@@ -1,0 +1,318 @@
+﻿2023-01-02 12:49:42,851 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Application started. Press Ctrl+C to shut down.
+2023-01-02 12:49:43,016 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Hosting environment: Development
+2023-01-02 12:49:43,020 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Content root path: C:\Users\navee\Desktop\API\AddressApi - Copy
+2023-01-02 12:49:44,046 [.NET ThreadPool Worker] ERROR Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware [(null)] - An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - AddressApi.Controllers.AccountController.CreateUser (AddressApi). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|8_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2023-01-02 12:49:53,888 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (44ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+2023-01-02 12:49:53,938 [.NET ThreadPool Worker] INFO  AddressApi.Controllers.AccountController [(null)] - User , viewed the total number of Accounts 
+2023-01-02 13:03:15,997 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Application started. Press Ctrl+C to shut down.
+2023-01-02 13:03:16,097 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Hosting environment: Development
+2023-01-02 13:03:16,101 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Content root path: C:\Users\navee\Desktop\API\AddressApi - Copy
+2023-01-02 13:03:17,167 [.NET ThreadPool Worker] ERROR Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware [(null)] - An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - AddressApi.Controllers.AccountController.CreateUser (AddressApi). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|8_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2023-01-02 13:04:01,016 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (61ms) [Parameters=[@__user_UserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Password]
+FROM [User] AS [u]
+WHERE [u].[UserName] = @__user_UserName_0
+2023-01-02 13:04:01,091 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (4ms) [Parameters=[@__user_UserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id]
+FROM [User] AS [u]
+WHERE [u].[UserName] = @__user_UserName_0
+2023-01-02 13:04:59,552 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (19ms) [Parameters=[@__user_UserName_0='?' (Size = 4000), @__userId_1='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [User] AS [u]
+        WHERE [u].[UserName] = @__user_UserName_0 AND [u].[Id] = @__userId_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-01-02 13:07:31,112 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedOn], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[Password], [u].[UserName]
+FROM [User] AS [u]
+2023-01-02 13:07:49,023 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedOn], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[Password], [u].[UserName]
+FROM [User] AS [u]
+2023-01-02 13:07:49,097 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (2ms) [Parameters=[@__type_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[Name] = @__type_0
+2023-01-02 13:07:49,117 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__type_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[Name] = @__type_0
+2023-01-02 13:07:49,129 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-02 13:07:49,168 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (2ms) [Parameters=[@__type_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[Name] = @__type_0
+2023-01-02 13:07:49,176 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (2ms) [Parameters=[@__type_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[Name] = @__type_0
+2023-01-02 13:07:49,549 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (58ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Guid), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Guid), @p15='?' (DbType = Guid), @p16='?' (DbType = Int32), @p17='?' (DbType = Guid), @p18='?' (DbType = Guid), @p19='?' (DbType = DateTime2), @p20='?' (Size = 4000), @p21='?' (DbType = Boolean), @p22='?' (DbType = Guid), @p23='?' (DbType = Guid), @p24='?' (DbType = Guid), @p25='?' (DbType = DateTime2), @p26='?' (DbType = Boolean), @p27='?' (Size = 4000), @p28='?' (DbType = Guid), @p29='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [User] ([Id], [CreatedOn], [FirstName], [IsActive], [LastName], [Password], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO [Address] ([AddressId], [City], [CreatedOn], [IsActive], [Line1], [Line2], [State], [Type], [UserId], [ZipCode], [country])
+VALUES (@p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+INSERT INTO [Emails] ([EmailId], [CreatedOn], [EmailAddress], [IsActive], [Type], [UserId])
+VALUES (@p18, @p19, @p20, @p21, @p22, @p23);
+INSERT INTO [PhoneNumber] ([phoneId], [CreatedOn], [IsActive], [PhoneNo], [Type], [UserId])
+VALUES (@p24, @p25, @p26, @p27, @p28, @p29);
+2023-01-02 13:07:49,573 [.NET ThreadPool Worker] INFO  AddressApi.Controllers.AccountController [(null)] - New User created with the user name: 29d251c6-9cf0-48bf-438f-08daec943f8f
+2023-01-02 13:26:45,454 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Application started. Press Ctrl+C to shut down.
+2023-01-02 13:26:45,740 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Hosting environment: Development
+2023-01-02 13:26:45,744 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Content root path: C:\Users\navee\Desktop\API\AddressApi - Copy
+2023-01-02 13:26:47,941 [.NET ThreadPool Worker] ERROR Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware [(null)] - An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - AddressApi.Controllers.AccountController.CreateUser (AddressApi). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|8_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2023-01-02 13:26:51,080 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (82ms) [Parameters=[@__user_UserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Password]
+FROM [User] AS [u]
+WHERE [u].[UserName] = @__user_UserName_0
+2023-01-02 13:26:51,155 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (4ms) [Parameters=[@__user_UserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id]
+FROM [User] AS [u]
+WHERE [u].[UserName] = @__user_UserName_0
+2023-01-02 13:27:36,170 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (32ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedOn], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[Password], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[Id] = @__id_0
+2023-01-02 13:27:37,413 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (992ms) [Parameters=[@p0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [User]
+OUTPUT 1
+WHERE [Id] = @p0;
+2023-01-02 13:27:37,428 [.NET ThreadPool Worker] INFO  AddressApi.Controllers.AccountController [(null)] - User deleted his account with the user id: e8eb0c76-45dd-4acf-b32d-08daec8460d9
+2023-01-02 13:27:43,054 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedOn], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[Password], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[Id] = @__id_0
+2023-01-02 13:27:43,056 [.NET ThreadPool Worker] ERROR AddressApi.Controllers.AccountController [(null)] - User - e8eb0c76-45dd-4acf-b32d-08daec8460d9, is trying to delete an Id of this User - e8eb0c76-45dd-4acf-b32d-08daec8460d9
+2023-01-02 13:28:00,802 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedOn], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[Password], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[Id] = @__id_0
+2023-01-02 13:28:00,804 [.NET ThreadPool Worker] ERROR AddressApi.Controllers.AccountController [(null)] - User - e8eb0c76-45dd-4acf-b32d-08daec8460d9, is trying to delete an Id of this User - e8eb0c76-45dd-4acf-b32d-08daec8460d9
+2023-01-02 13:58:28,117 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Application started. Press Ctrl+C to shut down.
+2023-01-02 13:58:28,192 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Hosting environment: Development
+2023-01-02 13:58:28,196 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Content root path: C:\Users\navee\Desktop\API\AddressApi - Copy
+2023-01-02 13:58:29,390 [.NET ThreadPool Worker] ERROR Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware [(null)] - An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - AddressApi.Controllers.AccountController.CreateUser (AddressApi). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|8_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2023-01-02 13:59:07,235 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (64ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedOn], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[Password], [u].[UserName]
+FROM [User] AS [u]
+2023-01-02 13:59:07,390 [.NET ThreadPool Worker] ERROR AddressApi.Controllers.AccountController [(null)] - Username already exists in the database
+2023-01-02 13:59:20,211 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedOn], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[Password], [u].[UserName]
+FROM [User] AS [u]
+2023-01-02 13:59:20,621 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (72ms) [Parameters=[@__type_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[Name] = @__type_0
+2023-01-02 13:59:20,653 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (3ms) [Parameters=[@__type_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[Name] = @__type_0
+2023-01-02 13:59:20,685 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-02 13:59:20,731 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__type_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[Name] = @__type_0
+2023-01-02 13:59:20,738 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__type_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[Name] = @__type_0
+2023-01-02 13:59:21,192 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (12ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime2), @p2='?' (Size = 4000), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Guid), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (DbType = Boolean), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Guid), @p15='?' (DbType = Guid), @p16='?' (DbType = Int32), @p17='?' (DbType = Guid), @p18='?' (DbType = Guid), @p19='?' (DbType = DateTime2), @p20='?' (Size = 4000), @p21='?' (DbType = Boolean), @p22='?' (DbType = Guid), @p23='?' (DbType = Guid), @p24='?' (DbType = Guid), @p25='?' (DbType = DateTime2), @p26='?' (DbType = Boolean), @p27='?' (Size = 4000), @p28='?' (DbType = Guid), @p29='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [User] ([Id], [CreatedOn], [FirstName], [IsActive], [LastName], [Password], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+INSERT INTO [Address] ([AddressId], [City], [CreatedOn], [IsActive], [Line1], [Line2], [State], [Type], [UserId], [ZipCode], [country])
+VALUES (@p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+INSERT INTO [Emails] ([EmailId], [CreatedOn], [EmailAddress], [IsActive], [Type], [UserId])
+VALUES (@p18, @p19, @p20, @p21, @p22, @p23);
+INSERT INTO [PhoneNumber] ([phoneId], [CreatedOn], [IsActive], [PhoneNo], [Type], [UserId])
+VALUES (@p24, @p25, @p26, @p27, @p28, @p29);
+2023-01-02 13:59:21,256 [.NET ThreadPool Worker] INFO  AddressApi.Controllers.AccountController [(null)] - New User created with the user name: c9a40f65-4c7c-4e79-707d-08daec9b7248
+2023-01-02 15:09:37,279 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Application started. Press Ctrl+C to shut down.
+2023-01-02 15:09:37,389 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Hosting environment: Development
+2023-01-02 15:09:37,394 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Content root path: C:\Users\navee\Desktop\API\AddressApi - Copy
+2023-01-02 15:09:39,552 [.NET ThreadPool Worker] ERROR Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware [(null)] - An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - AddressApi.Controllers.AccountController.CreateUser (AddressApi). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|8_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2023-01-02 15:09:52,842 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (78ms) [Parameters=[@__user_UserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Password]
+FROM [User] AS [u]
+WHERE [u].[UserName] = @__user_UserName_0
+2023-01-02 15:09:52,926 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (5ms) [Parameters=[@__user_UserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id]
+FROM [User] AS [u]
+WHERE [u].[UserName] = @__user_UserName_0
+2023-01-02 15:10:21,433 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [User] AS [u]
+2023-01-02 15:10:21,437 [.NET ThreadPool Worker] INFO  AddressApi.Controllers.AccountController [(null)] - User , viewed the total number of Accounts 
+2023-01-02 15:10:48,922 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CreatedOn], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[Password], [u].[UserName]
+FROM [User] AS [u]
+WHERE [u].[Id] = @__id_0
+2023-01-02 15:10:49,148 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (49ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-02 15:10:49,247 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-02 15:10:49,266 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-02 15:10:49,271 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-02 15:10:49,276 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-02 15:10:49,281 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-02 15:10:49,286 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-02 15:10:49,291 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-02 15:10:49,295 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-02 15:10:49,310 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-02 15:10:49,344 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-02 15:10:49,352 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-02 15:10:49,392 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (14ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-02 15:10:49,418 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-02 15:10:49,424 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-02 15:10:49,429 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-02 15:10:49,433 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-02 15:10:49,437 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-02 15:10:49,438 [.NET ThreadPool Worker] INFO  AddressApi.Controllers.AccountController [(null)] - User - c572c99e-ee1f-4d17-b69c-08dae952ed26, viewed the data
+2023-01-02 15:11:12,904 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (259ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = Guid), @p3='?' (Size = -1) (DbType = Binary)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [File] ([Id], [FileType], [UserId], [file])
+VALUES (@p0, @p1, @p2, @p3);
+2023-01-02 15:11:12,920 [.NET ThreadPool Worker] INFO  AddressApi.Controllers.AssetController [(null)] - File Uploaded sucessfully 
+2023-01-02 15:11:43,259 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (14ms) [Parameters=[@__assetId_0='?' (DbType = Guid), @__userId_1='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [File] AS [f]
+        WHERE [f].[Id] = @__assetId_0 AND [f].[UserId] = @__userId_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-01-02 15:11:43,273 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [f].[Id], [f].[FileType], [f].[UserId], [f].[file]
+FROM [File] AS [f]
+WHERE [f].[Id] = @__id_0
+2023-01-02 16:04:32,849 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Application started. Press Ctrl+C to shut down.
+2023-01-02 16:04:33,066 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Hosting environment: Development
+2023-01-02 16:04:33,071 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Content root path: C:\Users\navee\Desktop\API\AddressApi - Copy
+2023-01-02 16:04:38,915 [.NET ThreadPool Worker] ERROR Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware [(null)] - An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - AddressApi.Controllers.AccountController.CreateUser (AddressApi). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|8_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2023-01-02 16:04:48,115 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (438ms) [Parameters=[@__user_UserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Password]
+FROM [User] AS [u]
+WHERE [u].[UserName] = @__user_UserName_0
+2023-01-02 16:04:48,273 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (4ms) [Parameters=[@__user_UserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id]
+FROM [User] AS [u]
+WHERE [u].[UserName] = @__user_UserName_0
+2023-01-02 16:07:10,606 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Application started. Press Ctrl+C to shut down.
+2023-01-02 16:07:10,688 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Hosting environment: Development
+2023-01-02 16:07:10,692 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Content root path: C:\Users\navee\Desktop\API\AddressApi - Copy
+2023-01-02 16:07:12,445 [.NET ThreadPool Worker] ERROR Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware [(null)] - An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP method for action - AddressApi.Controllers.AccountController.CreateUser (AddressApi). Actions require an explicit HttpMethod binding for Swagger/OpenAPI 3.0
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|8_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
