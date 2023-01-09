@@ -103,11 +103,11 @@ namespace Testing.ControllerTest
             };
             user.phones.Add(phoneNumber1);
             var actionResult = controller.CreateUser(user);
-            var result = actionResult as OkObjectResult;
+            var result = actionResult as CreatedResult;
             string model = (string)result.Value;
             Assert.NotNull(model);
             Assert.IsType<string>(model);
-            Assert.IsType<OkObjectResult>(result);
+            Assert.IsType<CreatedResult>(result);
         }
 
         /// <summary>

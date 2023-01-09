@@ -30,7 +30,7 @@ namespace AddressApi.Service
         /// <returns></returns>
         public TokenDto Login(SiginInDto user)
 		{
-			string password = _context.User.Where(a => a.UserName == user.UserName).Select(a => a.Password).SingleOrDefault();
+			string? password = _context.User.Where(a => a.UserName == user.UserName).Select(a => a.Password).SingleOrDefault();
 			if (password == null || password != user.Password)
 			{
 				return null;

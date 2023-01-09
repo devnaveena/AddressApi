@@ -20,6 +20,14 @@ namespace AddressApi.Controllers
         private readonly IJWTManagerRepository _jWTManagerRepository;
         private readonly ILogger<AccountController> _logger;
         private readonly ILog _log;
+        /// <summary>
+        /// initalizes new instance for the class
+        /// </summary>
+        /// <param name="accountService">communicate between controller and repository</param>
+        /// <param name="jWTManagerRepository"></param>
+        /// <param name="logger"></param> 
+        /// <returns>id of the user</returns>
+
         public AccountController(IAccountService accountService, IJWTManagerRepository jWTManagerRepository, ILogger<AccountController> logger)
         {
             _accountService = accountService;
@@ -35,8 +43,10 @@ namespace AddressApi.Controllers
 
         [AllowAnonymous]
         [Route("api/account")]
+        [HttpPost]
         public IActionResult CreateUser([FromBody] UserDto user)
         {
+            _log.Info("entered into controller");
             try
             {
                 var result = _accountService.Create(user);
@@ -51,7 +61,7 @@ namespace AddressApi.Controllers
                     return Conflict("Email already exists in the database");
                 }
                 _log.Info("New User created with the user name: " + result);
-                return Ok(result);
+                return Created("id of the user",result);
 
             }
             catch (KeyNotFoundException)
@@ -72,6 +82,7 @@ namespace AddressApi.Controllers
 
         public IActionResult GetAllUser([FromQuery] Pagination pagination)
         {
+            _log.Info("entered into controller");
 
             var userToReturn = _accountService.GetAll(pagination);
             if (userToReturn == null)
@@ -93,7 +104,9 @@ namespace AddressApi.Controllers
         [Route("api/account/{userId:guid}")]
 
         public IActionResult GetById(Guid userId)
+
         {
+            _log.Info($"entered into controller, {userId}");
             Guid currentId = Guid.Parse("c572c99e-ee1f-4d17-b69c-08dae952ed26");
             //_jWTManagerRepository.GetUserId();
             
@@ -101,12 +114,12 @@ namespace AddressApi.Controllers
             UserForCreatingDto result = _accountService.GetUserbyId(userId);
             if (currentId != userId && result!=null)
             {
-                _log.Error($"User - {userId}, is trying to access  of the User - {userId}");
+                _log.Debug($"User - {userId}, is trying to access  of the User - {userId}");
                 return Unauthorized();
             }
             if (result == null && currentId != userId)
             {
-                _log.Error($"User - not found in the database - {userId}");
+                _log.Debug($"User - not found in the database - {userId}");
                 return NotFound("User Not Found in the database");
             }
             _log.Info($"User - {userId}, viewed the data");
@@ -124,7 +137,8 @@ namespace AddressApi.Controllers
 
         public IActionResult CountUsers()
 
-        { 
+        {
+            _log.Info("entered into controller");
             var result = _accountService.GetCount();
            _log.Info($"User , viewed the total number of Accounts ");
             return Ok(result);
@@ -140,6 +154,7 @@ namespace AddressApi.Controllers
         [Authorize]
         public IActionResult Update(Guid id,[FromBody] UserDto userupdate)
         {
+            _log.Info("entered into controller");
             Guid currentId = Guid.Parse("c572c99e-ee1f-4d17-b69c-08dae952ed26");
             //Guid currentId = _jWTManagerRepository.GetUserId();
 
@@ -184,6 +199,7 @@ namespace AddressApi.Controllers
         
         public  IActionResult DeleteUser(Guid id)
         {
+            _log.Info("entered into controller");
             Guid currentId = Guid.Parse("c572c99e-ee1f-4d17-b69c-08dae952ed26");
             // Guid currentId =  _jWTManagerRepository.GetUserId();
             if (currentId != id)
@@ -204,7 +220,7 @@ namespace AddressApi.Controllers
            
         }
         /// <summary>
-        /// Metadata  API - deletes an existing user by id
+        /// Metadata  API 
         /// </summary>
         /// <param name="userid"></param>
         /// <returns></returns>
@@ -213,9 +229,10 @@ namespace AddressApi.Controllers
         [HttpGet]
 
         [Route("api/meta/refset")]
+
         public ActionResult MetaData([FromQuery] string key)
         {
-
+            _log.Info("entered into controller");
             var returnTo =_accountService.Metadata(key);
             return StatusCode(StatusCodes.Status200OK, returnTo);
         }

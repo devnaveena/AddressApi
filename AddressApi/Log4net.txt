@@ -316,3 +316,1259 @@ Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Ambiguous HTTP meth
    at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
    at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|8_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2023-01-09 17:52:05,469 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Application started. Press Ctrl+C to shut down.
+2023-01-09 17:52:05,557 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Hosting environment: Development
+2023-01-09 17:52:05,562 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Content root path: C:\Users\navee\Desktop\API - Copy (3)\AddressApi
+2023-01-09 18:01:08,676 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Application started. Press Ctrl+C to shut down.
+2023-01-09 18:01:08,759 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Hosting environment: Development
+2023-01-09 18:01:08,764 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Content root path: C:\Users\navee\Desktop\API - Copy (3)\AddressApi
+2023-01-09 18:01:17,347 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (102ms) [Parameters=[@__user_UserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Password]
+FROM [User] AS [u]
+WHERE [u].[UserName] = @__user_UserName_0
+2023-01-09 18:01:17,416 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (4ms) [Parameters=[@__user_UserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id]
+FROM [User] AS [u]
+WHERE [u].[UserName] = @__user_UserName_0
+2023-01-09 18:01:36,360 [.NET ThreadPool Worker] INFO  AddressApi.Controllers.AccountController [(null)] - entered into controller
+2023-01-09 18:01:36,457 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedOn], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[Password], [u].[UserName]
+FROM [User] AS [u]
+2023-01-09 18:01:36,592 [.NET ThreadPool Worker] ERROR AddressApi.Controllers.AccountController [(null)] - Username already exists in the database
+2023-01-09 19:42:19,536 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Application started. Press Ctrl+C to shut down.
+2023-01-09 19:42:20,204 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Hosting environment: Development
+2023-01-09 19:42:20,216 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Content root path: C:\Users\navee\Desktop\API - Copy (3)\AddressApi
+2023-01-09 19:42:44,756 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Database.Connection [(null)] - An error occurred using the connection to database 'Db' on server 'LAPTOP-0VSRK5M'.
+2023-01-09 19:42:45,142 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Query [(null)] - An exception occurred while iterating over the results of a query for context type 'AddressApi.Repository.RepositoryContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): The network path was not found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): The network path was not found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2023-01-09 19:43:25,439 [.NET ThreadPool Worker] ERROR Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware [(null)] - An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): The network path was not found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method55(Closure, QueryContext)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at AddressApi.Service.JWTManagerRepository.Login(SiginInDto user) in C:\Users\navee\Desktop\API - Copy (3)\AddressApi\Service\JWTManagerRepository.cs:line 33
+   at AddressApi.Controllers.AuthController.Authenticate(SiginInDto signinDto) in C:\Users\navee\Desktop\API - Copy (3)\AddressApi\Controllers\AuthController.cs:line 28
+   at lambda_method2(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|8_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2023-01-09 19:44:15,935 [.NET ThreadPool Worker] INFO  AddressApi.Controllers.AccountController [(null)] - entered into controller
+2023-01-09 19:44:31,385 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Database.Connection [(null)] - An error occurred using the connection to database 'Db' on server 'LAPTOP-0VSRK5M'.
+2023-01-09 19:44:31,463 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Query [(null)] - An exception occurred while iterating over the results of a query for context type 'AddressApi.Repository.RepositoryContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): The network path was not found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): The network path was not found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2023-01-09 19:44:52,033 [.NET ThreadPool Worker] ERROR Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware [(null)] - An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): The network path was not found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at AddressApi.Repository.AccountRepository.GetUsers() in C:\Users\navee\Desktop\API - Copy (3)\AddressApi\Repository\AccountRepository.cs:line 22
+   at AddressApi.Service.AccountService.Usercheck(UserDto user) in C:\Users\navee\Desktop\API - Copy (3)\AddressApi\Service\AccountService.cs:line 117
+   at AddressApi.Service.AccountService.Create(UserDto user) in C:\Users\navee\Desktop\API - Copy (3)\AddressApi\Service\AccountService.cs:line 27
+   at AddressApi.Controllers.AccountController.CreateUser(UserDto user) in C:\Users\navee\Desktop\API - Copy (3)\AddressApi\Controllers\AccountController.cs:line 52
+   at lambda_method56(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|8_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2023-01-09 19:45:17,606 [.NET ThreadPool Worker] INFO  AddressApi.Controllers.AccountController [(null)] - entered into controller
+2023-01-09 19:45:32,935 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Database.Connection [(null)] - An error occurred using the connection to database 'Db' on server 'LAPTOP-0VSRK5M'.
+2023-01-09 19:45:32,950 [.NET ThreadPool Worker] ERROR Microsoft.EntityFrameworkCore.Query [(null)] - An exception occurred while iterating over the results of a query for context type 'AddressApi.Repository.RepositoryContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): The network path was not found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)
+ ---> System.ComponentModel.Win32Exception (53): The network path was not found.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+2023-01-09 19:54:31,641 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Application started. Press Ctrl+C to shut down.
+2023-01-09 19:54:31,740 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Hosting environment: Development
+2023-01-09 19:54:31,745 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Content root path: C:\Users\navee\Desktop\API - Copy (3)\AddressApi
+2023-01-09 19:54:41,081 [.NET ThreadPool Worker] INFO  AddressApi.Controllers.AccountController [(null)] - entered into controller
+2023-01-09 19:54:43,202 [.NET ThreadPool Worker] WARN  Microsoft.EntityFrameworkCore.Query [(null)] - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-01-09 19:54:43,209 [.NET ThreadPool Worker] WARN  Microsoft.EntityFrameworkCore.Query [(null)] - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-01-09 19:54:44,453 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (240ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedOn], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[Password], [u].[UserName]
+FROM [User] AS [u]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2023-01-09 19:54:44,765 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (35ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:54:45,157 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (26ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,181 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,186 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,192 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,198 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,204 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,209 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,215 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,309 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (70ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:54:45,351 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:54:45,384 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,455 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (57ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:54:45,496 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:54:45,507 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,525 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,536 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,550 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,562 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:54:45,572 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,586 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,597 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:54:45,604 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:54:45,611 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,618 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:54:45,623 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:54:45,629 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,635 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:54:45,640 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,645 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,651 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:54:45,656 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:54:45,662 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,669 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:54:45,674 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:54:45,681 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,688 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:54:45,693 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,699 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,705 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:54:45,710 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:54:45,715 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,722 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:54:45,728 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:54:45,735 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,741 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:54:45,750 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,759 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,767 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:54:45,772 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:54:45,778 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,785 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:54:45,791 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:54:45,799 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,804 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:54:45,809 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,817 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,823 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:54:45,828 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:54:45,835 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,841 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:54:45,848 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:54:45,853 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,859 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:54:45,864 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,869 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,874 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:54:45,879 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:54:45,884 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,889 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:54:45,894 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:54:45,900 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,907 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:54:45,913 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,923 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,933 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:54:45,940 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:54:45,946 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,953 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:54:45,959 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:54:45,965 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:54:45,966 [.NET ThreadPool Worker] INFO  AddressApi.Controllers.AccountController [(null)] - Gets all users in the database: System.Collections.Generic.List`1[AddressApi.Entities.DTOs.RequestDto.UserForCreatingDto]
+2023-01-09 19:56:04,770 [.NET ThreadPool Worker] INFO  AddressApi.Controllers.AccountController [(null)] - entered into controller
+2023-01-09 19:56:04,826 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedOn], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[Password], [u].[UserName]
+FROM [User] AS [u]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2023-01-09 19:56:04,835 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:56:04,842 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:04,848 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:04,853 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:04,859 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:04,868 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:04,873 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:04,882 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:04,887 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:04,896 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:56:04,903 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:56:04,908 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:04,917 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:56:04,923 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:56:04,929 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:04,934 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:04,939 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:04,946 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:04,953 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:56:04,958 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:04,964 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:04,969 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:56:04,973 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:56:04,979 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:04,984 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:56:04,988 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:56:04,995 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,002 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:56:05,008 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,018 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,026 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:56:05,036 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:56:05,043 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,050 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:56:05,054 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:56:05,059 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,064 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:56:05,068 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,073 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,078 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:56:05,083 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:56:05,088 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,093 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:56:05,099 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:56:05,104 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,109 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:56:05,115 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,120 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,125 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:56:05,130 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:56:05,134 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,139 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:56:05,144 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:56:05,149 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,154 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:56:05,158 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,164 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,169 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:56:05,174 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:56:05,181 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,186 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:56:05,191 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:56:05,196 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,202 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:56:05,207 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,213 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,218 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:56:05,222 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:56:05,230 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,235 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:56:05,239 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:56:05,243 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,250 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:56:05,255 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,262 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,269 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:56:05,273 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:56:05,279 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,284 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:56:05,288 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:56:05,292 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:56:05,293 [.NET ThreadPool Worker] INFO  AddressApi.Controllers.AccountController [(null)] - Gets all users in the database: System.Collections.Generic.List`1[AddressApi.Entities.DTOs.RequestDto.UserForCreatingDto]
+2023-01-09 19:58:03,041 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Application started. Press Ctrl+C to shut down.
+2023-01-09 19:58:03,142 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Hosting environment: Development
+2023-01-09 19:58:03,147 [1] INFO  Microsoft.Hosting.Lifetime [(null)] - Content root path: C:\Users\navee\Desktop\API - Copy (3)\AddressApi
+2023-01-09 19:58:49,182 [.NET ThreadPool Worker] INFO  AddressApi.Controllers.AccountController [(null)] - entered into controller
+2023-01-09 19:59:17,456 [.NET ThreadPool Worker] WARN  Microsoft.EntityFrameworkCore.Query [(null)] - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-01-09 19:59:17,468 [.NET ThreadPool Worker] WARN  Microsoft.EntityFrameworkCore.Query [(null)] - The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2023-01-09 19:59:18,289 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (68ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[CreatedOn], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[Password], [u].[UserName]
+FROM [User] AS [u]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2023-01-09 19:59:18,472 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:59:18,670 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:18,694 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:18,700 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:18,708 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:18,714 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:18,721 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:18,726 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:18,732 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:18,757 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:59:18,835 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:59:18,841 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:18,862 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:59:18,900 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:59:18,909 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:18,915 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:18,921 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:18,927 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:18,935 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:59:18,944 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:18,952 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:18,960 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:59:18,968 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:59:18,975 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:18,982 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:59:18,988 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:59:18,995 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,001 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:59:19,006 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,014 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,023 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:59:19,031 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:59:19,038 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,044 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:59:19,051 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:59:19,057 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,062 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:59:19,081 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,088 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,095 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:59:19,106 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:59:19,115 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,121 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:59:19,126 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:59:19,133 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,139 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:59:19,145 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,152 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,157 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:59:19,164 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:59:19,170 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,178 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:59:19,186 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:59:19,200 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,208 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:59:19,217 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,225 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,234 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:59:19,241 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:59:19,248 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,256 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:59:19,264 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:59:19,273 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,281 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:59:19,287 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,294 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,302 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:59:19,307 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:59:19,314 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,320 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:59:19,327 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:59:19,337 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,343 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[AddressId], [a].[City], [a].[CreatedOn], [a].[IsActive], [a].[Line1], [a].[Line2], [a].[State], [a].[Type], [a].[UserId], [a].[ZipCode], [a].[country]
+FROM [Address] AS [a]
+2023-01-09 19:59:19,351 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,360 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,366 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+WHERE [e].[UserId] = @__id_0
+2023-01-09 19:59:19,372 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [e].[EmailId], [e].[CreatedOn], [e].[EmailAddress], [e].[IsActive], [e].[Type], [e].[UserId]
+FROM [Emails] AS [e]
+2023-01-09 19:59:19,378 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0
+2023-01-09 19:59:19,384 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+WHERE [p].[UserId] = @__id_0
+2023-01-09 19:59:19,389 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[phoneId], [p].[CreatedOn], [p].[IsActive], [p].[PhoneNo], [p].[Type], [p].[UserId]
+FROM [PhoneNumber] AS [p]
+2023-01-09 19:59:19,394 [.NET ThreadPool Worker] INFO  Microsoft.EntityFrameworkCore.Database.Command [(null)] - Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[RefSetId], [r].[Description], [r].[Name]
+FROM [RefSet] AS [r]
+WHERE [r].[RefSetId] = @__id_0

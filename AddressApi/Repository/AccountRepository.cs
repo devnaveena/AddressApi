@@ -24,7 +24,7 @@ namespace AddressApi.Repository
         }
         public RefSet Matches(string type)
         {
-            RefSet result = _context.RefSet.FirstOrDefault(o => o.Name.Equals(type));
+            RefSet? result = _context.RefSet.FirstOrDefault(o => o.Name.Equals(type));
             if (result == null)
                 return null;
             return result;

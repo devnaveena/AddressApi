@@ -24,7 +24,7 @@ namespace AddressApi
             services.AddScoped<IJWTManagerRepository, JWTManagerRepository>();
             services.AddDbContext<RepositoryContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Db")));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddSwaggerGen(c =>
+           /* services.AddSwaggerGen(c =>
             {
 
                 c.SwaggerDoc("v1", new OpenApiInfo
@@ -33,7 +33,8 @@ namespace AddressApi
                     Title = "AddressAPI",
                     Description = "An address book list API",
                 });
-            });
+            });*/
+            services.AddSwaggerGen();
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -87,10 +88,14 @@ namespace AddressApi
                 endpoints.MapControllers();
             });
             app.UseSwagger();
-            app.UseSwaggerUI(c =>
+           /* app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("v1/swagger.json", "My API V1");
                 c.RoutePrefix = "swagger";
+            });*/
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "APIs");
             });
         }
  
