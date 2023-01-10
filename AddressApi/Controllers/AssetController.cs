@@ -36,18 +36,26 @@ namespace AddressApi.Controllers
         {
             Guid currentId = Guid.Parse("c572c99e-ee1f-4d17-b69c-08dae952ed26");
             //Guid currentId = _jwtManagerRepository.GetUserId();
-            if (currentId != userId)
+            try
             {
-                _log.Error($"User - {currentId}, is trying to access this User - {userId}");
-                return StatusCode(StatusCodes.Status401Unauthorized);
-            }
-            {
-                UploadFileDto result = _accountService.UploadFile(file,userId);
-                _log.Info("File Uploaded sucessfully ");
+                if (currentId != userId)
+                {
+                    _log.Debug($"User - {currentId}, is trying to access this User - {userId}");
+                    return StatusCode(StatusCodes.Status401Unauthorized);
+                }
+                {
+                    UploadFileDto result = _accountService.UploadFile(file, userId);
+                    _log.Info("File Uploaded sucessfully ");
 
-                return Ok( result);
+                    return Ok(result);
+                }
             }
-            
+            catch (Exception ex)
+            {
+                _log.Error("Something went wrong", ex);
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+
         }
         /// <summary>
         /// File Download API - retrives the  stored in the database
@@ -60,23 +68,31 @@ namespace AddressApi.Controllers
         {
             Guid currentId = Guid.Parse("c572c99e-ee1f-4d17-b69c-08dae952ed26");
             // Guid currentId = _jwtManagerRepository.GetUserId();
-            if (!_accountService.CheckAssetId(assetId, currentId))
+            try
             {
-                _log.Error($"User - {currentId}, is trying to update this User - {assetId}");
-                return Unauthorized();
+                if (!_accountService.CheckAssetId(assetId, currentId))
+                {
+                    _log.Debug($"User - {currentId}, is trying to update this User - {assetId}");
+                    return Unauthorized();
+                }
+                Tuple<FileModel, string> file = _accountService.DownloadFile(assetId);
+                if (file == null)
+                {
+                    _log.Debug($"User - not found in the database - {assetId}");
+                    return NotFound("File Not Found");
+                }
+                FileModel fileModel = (FileModel)file.Item1;
+                var result = File(fileModel.file, fileModel.FileType);
+                return Ok(result);
+
             }
-            Tuple<FileModel, string> file = _accountService.DownloadFile(assetId);
-            if (file == null)
+            catch (Exception ex)
             {
-                _log.Error($"User - not found in the database - {assetId}");
-                return NotFound("File Not Found");
+                _log.Error("Something went wrong", ex);
+                return StatusCode(StatusCodes.Status500InternalServerError);
             }
-            FileModel fileModel = (FileModel) file.Item1;
-            var result= File(fileModel.file, fileModel.FileType);
-            return Ok( result);
+
         }
-
     }
-
 }
 

@@ -157,12 +157,14 @@ namespace AddressApi.Service
         /// <param name="pagination"></param>
         /// <returns></returns>
         //get all the users
-        public IEnumerable<UserForCreatingDto> GetAll(Pagination pagination)
+        public PagedList<UserForCreatingDto> GetAll(Pagination pagination)
         {
 
             List<UserForCreatingDto> userDTOs = new List<UserForCreatingDto>();
 
             List<User> user = _accountRepository.GetUsers(pagination);
+            if(user==null)
+                return PagedList<UserForCreatingDto>.Create(new List<UserForCreatingDto>(), 0, 1);
             for (int i = 0; i < user.Count; i++)
             {
                 UserForCreatingDto user2 = new UserForCreatingDto();
@@ -171,6 +173,7 @@ namespace AddressApi.Service
                 user2.Id = user[i].Id;
                 user2.FirstName = user[i].FirstName;
                 user2.LastName = user[i].LastName;
+                user2.UserName= user[i].UserName;
                 user2.Address = new List<AddressForCreatingDto>();
                 user2.Email = new List<EmailForCreatingDto>();
                 user2.Phone = new List<PhoneForCreatingDto>();
@@ -214,7 +217,7 @@ namespace AddressApi.Service
                 }
                 userDTOs.Add(user2);
             }
-            return userDTOs;
+            return PagedList<UserForCreatingDto>.Create(userDTOs,pagination.pageNumber,pagination._pageSize);
         }
         /// <summary>
         /// returns the type

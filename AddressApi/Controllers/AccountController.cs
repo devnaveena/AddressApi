@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace AddressApi.Controllers
 {
@@ -46,18 +47,19 @@ namespace AddressApi.Controllers
         [HttpPost]
         public IActionResult CreateUser([FromBody] UserDto user)
         {
-            _log.Info("entered into controller");
+            _log.Info("Creating user in the database");
             try
             {
+                _log.Info("Sending data to database" + user);
                 var result = _accountService.Create(user);
                 if (result == "true")
                 {
-                    _log.Error($"Username already exists in the database");
+                    _log.Debug($"Username already exists in the database");
                     return Conflict("Username already exists in the database");
                 }
                 if (result == "false")
                 {
-                    _log.Error($"Email already exists in the database");
+                    _log.Debug($"Email already exists in the database");
                     return Conflict("Email already exists in the database");
                 }
                 _log.Info("New User created with the user name: " + result);
@@ -66,8 +68,13 @@ namespace AddressApi.Controllers
             }
             catch (KeyNotFoundException)
             {
-                _log.Error($"Given metadata not exists in the database");
-                return NotFound("MetadataNotFound");
+                _log.Debug($"Given metadata not exists in the database");
+                return NotFound();
+            }
+            catch (Exception)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "Internal Server error occurred" });
             }
 
         }
@@ -82,11 +89,21 @@ namespace AddressApi.Controllers
 
         public IActionResult GetAllUser([FromQuery] Pagination pagination)
         {
-            _log.Info("entered into controller");
+            _log.Info("Getting details from the database");
 
-            var userToReturn = _accountService.GetAll(pagination);
+            PagedList<UserForCreatingDto> userToReturn = _accountService.GetAll(pagination);
+            var metaData = new
+            {
+                totalCount = userToReturn.TotalCount,
+                pageSize = userToReturn.PageSize,
+                currentPage = userToReturn.CurrentPage,
+                totalPages = userToReturn.TotalPages,
+            };
+            Response.Headers.Add("X-Pagination", JsonConvert.SerializeObject(metaData));
+
             if (userToReturn == null)
             {
+                _log.Debug("No data found in the database");
                 return NoContent();
             }
             _log.Info("Gets all users in the database: " +userToReturn);
@@ -106,25 +123,31 @@ namespace AddressApi.Controllers
         public IActionResult GetById(Guid userId)
 
         {
-            _log.Info($"entered into controller, {userId}");
+            _log.Info($"geting, {userId}, details");
             Guid currentId = Guid.Parse("c572c99e-ee1f-4d17-b69c-08dae952ed26");
             //_jWTManagerRepository.GetUserId();
-            
+            try
+            {
+                UserForCreatingDto result = _accountService.GetUserbyId(userId);
+                if (currentId != userId && result != null)
+                {
+                    _log.Debug($"User - {userId}, is trying to access  of the User - {userId}");
+                    return Unauthorized();
+                }
+                if (result == null && currentId != userId)
+                {
+                    _log.Debug($"User - not found in the database - {userId}");
+                    return NotFound("User Not Found in the database");
+                }
+                _log.Info($"User - {userId}, viewed the data");
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Something went wrong", ex);
+                return StatusCode(StatusCodes.Status500InternalServerError, ex);
+            }
 
-            UserForCreatingDto result = _accountService.GetUserbyId(userId);
-            if (currentId != userId && result!=null)
-            {
-                _log.Debug($"User - {userId}, is trying to access  of the User - {userId}");
-                return Unauthorized();
-            }
-            if (result == null && currentId != userId)
-            {
-                _log.Debug($"User - not found in the database - {userId}");
-                return NotFound("User Not Found in the database");
-            }
-            _log.Info($"User - {userId}, viewed the data");
-            return Ok(result);
-            
 
         }
         /// <summary>
@@ -138,10 +161,19 @@ namespace AddressApi.Controllers
         public IActionResult CountUsers()
 
         {
-            _log.Info("entered into controller");
-            var result = _accountService.GetCount();
-           _log.Info($"User , viewed the total number of Accounts ");
-            return Ok(result);
+            _log.Info("started counting the users");
+            try
+            {
+                var result = _accountService.GetCount();
+                _log.Info($"User , viewed the total number of Accounts ");
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Something went wrong", ex);
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+
         }
         /// <summary>
         /// Update API - updates the existing user 
@@ -154,16 +186,18 @@ namespace AddressApi.Controllers
         [Authorize]
         public IActionResult Update(Guid id,[FromBody] UserDto userupdate)
         {
-            _log.Info("entered into controller");
+            _log.Info("Start to Update user deatils in the database");
+
             Guid currentId = Guid.Parse("c572c99e-ee1f-4d17-b69c-08dae952ed26");
             //Guid currentId = _jWTManagerRepository.GetUserId();
 
             if (currentId != id)
             {
-                _log.Error($"User - {id}, is trying to access  of the User - {currentId}");
+                _log.Debug($"User - {id}, is trying to access  of the User - {currentId}");
 
                 return Unauthorized();
             }
+           
             bool checkUserExists = _accountService.UserExist(id, userupdate);
 
             if (checkUserExists)
@@ -174,24 +208,29 @@ namespace AddressApi.Controllers
                 userUp = (UpdateDto)_accountService.Update(id, userupdate);
                 if (userUp == null)
                 {
-                    _log.Error($"User - not found in the database - {id}");
-                    return NotFound("User Not Found in the database");
+                    _log.Debug($"User - not found in the database - {id}");
+                    return NotFound();
                 }
                 _log.Info("User updated in the Account with the user name: " + userUp.UserName);
                 return Ok(userUp);
             }
             catch (KeyNotFoundException)
             {
-                _log.Error($"Given metadata not exists in the database");
+                _log.Debug($"Given metadata not exists in the database");
 
-                return Conflict( "Given Metadata Not valid");
+                return Conflict();
+            }
+            catch (Exception ex)
+            {
+                _log.Error("Something went wrong", ex);
+                return StatusCode(StatusCodes.Status500InternalServerError);
             }
 
         }
         /// <summary>
         /// Delete API - deletes an existing user by id
         /// </summary>
-        /// <param name="userid"></param>
+        /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete]
         [Authorize]
@@ -199,37 +238,42 @@ namespace AddressApi.Controllers
         
         public  IActionResult DeleteUser(Guid id)
         {
-            _log.Info("entered into controller");
+            _log.Info("started to delete user deatils");
             Guid currentId = Guid.Parse("c572c99e-ee1f-4d17-b69c-08dae952ed26");
             // Guid currentId =  _jWTManagerRepository.GetUserId();
             if (currentId != id)
             {
-                _log.Error($"User - {currentId}, is trying to delete an Id of this User - {id}");
+                _log.Debug($"User - {currentId}, is trying to delete an Id of this User - {id}");
                 return Unauthorized();
             }
-            var result = _accountService.Delete(id);
-            if (result == null)
+            try
             {
-                _log.Error($"User - not found in the database - {id}");
+                var result = _accountService.Delete(id);
+                if (result == null)
+                {
+                    _log.Debug($"User - not found in the database - {id}");
 
-                return NotFound("User Not Found");
+                    return NotFound();
+                }
+                _log.Info("User deleted his account with the user id: " + id);
+                return Ok("Address"+result+ "was deleted successfully");
             }
-            _log.Info("User deleted his account with the user id: " + id);
-            return Ok(result);
-            
-           
+
+            catch (Exception ex)
+            {
+                _log.Error("Something went wrong", ex);
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
         /// <summary>
         /// Metadata  API 
         /// </summary>
-        /// <param name="userid"></param>
+        /// <param name="key"></param>
         /// <returns></returns>
 
 
         [HttpGet]
-
         [Route("api/meta/refset")]
-
         public ActionResult MetaData([FromQuery] string key)
         {
             _log.Info("entered into controller");

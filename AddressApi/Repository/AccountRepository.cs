@@ -62,15 +62,20 @@ namespace AddressApi.Repository
         public List<User> GetUsers(Pagination pagination)
         {
             var sort = _context.User as IQueryable<User>;
-            if (pagination.SortBy == "FirstName")
-                sort = sort.OrderBy(x => x.FirstName);
-            if (pagination.SortBy == "LastName")
-                sort = sort.OrderBy(x => x.LastName);
-            if (pagination.SortOrder == "DSC" && pagination.SortBy == "FirstName")
-                sort = sort.OrderByDescending(x => x.FirstName);
-            if (pagination.SortOrder == "DSC" && pagination.SortBy == "LastName")
-                sort = sort.OrderByDescending(x => x.LastName);
-            return sort.Skip(pagination.pageSize * (pagination.pageNumber - 1)).Take(pagination.pageSize).ToList();
+            
+            
+
+
+                if (pagination.SortBy.ToLower() == "username" && pagination.SortOrder.ToLower() == "asc")
+                    return sort.OrderBy(x => x.UserName).ToList();
+                if (pagination.SortBy.ToLower() == "lastname" && pagination.SortOrder.ToLower() == "asc")
+                    return sort.OrderBy(x => x.LastName).ToList();
+                if (pagination.SortOrder.ToLower() == "desc" && pagination.SortBy.ToLower() == "username")
+                    return sort.OrderByDescending(x => x.UserName).ToList();
+                if (pagination.SortOrder.ToLower() == "desc" && pagination.SortBy.ToLower() == "lastname")
+                    return sort.OrderByDescending(x => x.LastName).ToList();
+            return null;
+            
         }
         /// <summary>
         /// return address

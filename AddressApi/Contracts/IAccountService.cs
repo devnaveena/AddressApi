@@ -16,7 +16,7 @@ namespace AddressApi.Contracts
         /// Get all the user from the database
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<UserForCreatingDto> GetAll(Pagination pagination);
+        public PagedList<UserForCreatingDto> GetAll(Pagination pagination);
         /// <summary>
         /// Get the count of the user in the database
         /// </summary>
